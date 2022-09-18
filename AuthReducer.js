@@ -1,6 +1,6 @@
-import {SET_REG_LOADING , SET_REG_SUCCESS , SET_REG_FAILURE , LOGOUT } from '../Actions/Types'
+import {SET_LOGIN_LOADING , SET_LOGIN_SUCCESS , SET_LOGIN_FAILURE , LOGOUT, CLEAN_AUTH } from '../Actions/Types'
 
-const Register  =  (state , action) =>{
+const Login  =  (state , action) =>{
 
     if( typeof state ===  'undefined')
     {
@@ -18,19 +18,25 @@ const Register  =  (state , action) =>{
             error : {},
             loading : false
         }
-        case SET_REG_LOADING : 
+        case CLEAN_AUTH : 
+        return {
+            data : {},
+            error : {},
+            loading : false
+        }
+        case SET_LOGIN_LOADING : 
         return {
             loading : true,
             data :  {},
             error  :{}
         }
-        case SET_REG_SUCCESS : 
+        case SET_LOGIN_SUCCESS : 
         return {
             loading : false,
             data : action.data,
             error  : {}
         }
-        case SET_REG_FAILURE : 
+        case SET_LOGIN_FAILURE : 
         return {
             loading : false,
             data : {},
@@ -44,4 +50,4 @@ const Register  =  (state , action) =>{
 
 }
 
-export default Register;
+export default Login;

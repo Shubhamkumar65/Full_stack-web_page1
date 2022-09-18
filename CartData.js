@@ -1,6 +1,6 @@
-import {SET_REG_LOADING , SET_REG_SUCCESS , SET_REG_FAILURE , LOGOUT } from '../Actions/Types'
+import {GET_CART_LOADING ,GET_CART_SUCCESS ,GET_CART_FAILURE , LOGOUT} from '../Actions/Types'
 
-const Register  =  (state , action) =>{
+const GetCart  =  (state , action) =>{
 
     if( typeof state ===  'undefined')
     {
@@ -18,19 +18,20 @@ const Register  =  (state , action) =>{
             error : {},
             loading : false
         }
-        case SET_REG_LOADING : 
+       
+        case GET_CART_LOADING : 
         return {
             loading : true,
             data :  {},
             error  :{}
         }
-        case SET_REG_SUCCESS : 
+        case GET_CART_SUCCESS : 
         return {
             loading : false,
             data : action.data,
             error  : {}
         }
-        case SET_REG_FAILURE : 
+        case GET_CART_FAILURE : 
         return {
             loading : false,
             data : {},
@@ -44,4 +45,4 @@ const Register  =  (state , action) =>{
 
 }
 
-export default Register;
+export default GetCart ;

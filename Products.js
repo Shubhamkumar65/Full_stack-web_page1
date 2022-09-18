@@ -1,6 +1,6 @@
-import {SET_REG_LOADING , SET_REG_SUCCESS , SET_REG_FAILURE , LOGOUT } from '../Actions/Types'
+import {GET_ALL_PRODUCTS_LOADING ,GET_ALL_PRODUCTS_SUCCESS ,GET_ALL_PRODUCTS_FAILURE , LOGOUT} from '../Actions/Types'
 
-const Register  =  (state , action) =>{
+const Products  =  (state , action) =>{
 
     if( typeof state ===  'undefined')
     {
@@ -18,19 +18,20 @@ const Register  =  (state , action) =>{
             error : {},
             loading : false
         }
-        case SET_REG_LOADING : 
+       
+        case GET_ALL_PRODUCTS_LOADING : 
         return {
             loading : true,
             data :  {},
             error  :{}
         }
-        case SET_REG_SUCCESS : 
+        case GET_ALL_PRODUCTS_SUCCESS : 
         return {
             loading : false,
             data : action.data,
             error  : {}
         }
-        case SET_REG_FAILURE : 
+        case GET_ALL_PRODUCTS_FAILURE : 
         return {
             loading : false,
             data : {},
@@ -44,4 +45,4 @@ const Register  =  (state , action) =>{
 
 }
 
-export default Register;
+export default Products;

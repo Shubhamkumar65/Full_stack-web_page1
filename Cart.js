@@ -1,6 +1,6 @@
-import {SET_REG_LOADING , SET_REG_SUCCESS , SET_REG_FAILURE , LOGOUT } from '../Actions/Types'
+import {ADD_TO_CART_LOADING ,ADD_TO_CART_SUCCESS ,ADD_TO_CART_FAILURE , LOGOUT, CLEAR_A2C_MSG} from '../Actions/Types'
 
-const Register  =  (state , action) =>{
+const Cart  =  (state , action) =>{
 
     if( typeof state ===  'undefined')
     {
@@ -18,19 +18,26 @@ const Register  =  (state , action) =>{
             error : {},
             loading : false
         }
-        case SET_REG_LOADING : 
+        case CLEAR_A2C_MSG : 
+        return {
+            data : {},
+            error : {},
+            loading : false
+        }
+       
+        case ADD_TO_CART_LOADING : 
         return {
             loading : true,
             data :  {},
             error  :{}
         }
-        case SET_REG_SUCCESS : 
+        case ADD_TO_CART_SUCCESS : 
         return {
             loading : false,
             data : action.data,
             error  : {}
         }
-        case SET_REG_FAILURE : 
+        case ADD_TO_CART_FAILURE : 
         return {
             loading : false,
             data : {},
@@ -44,4 +51,4 @@ const Register  =  (state , action) =>{
 
 }
 
-export default Register;
+export default Cart;
